@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a18eb967-8bf7-4562-aa2c-5bcfd0f6c2ae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.test.js" afterPath="$PROJECT_DIR$/src/App.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/todo/TodoForm.js" afterPath="$PROJECT_DIR$/src/components/todo/TodoForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/todo/TodoItem.js" afterPath="$PROJECT_DIR$/src/components/todo/TodoItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/todo/TodoList.js" afterPath="$PROJECT_DIR$/src/components/todo/TodoList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/todo/index.js" afterPath="$PROJECT_DIR$/src/components/todo/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/todoHelpers.js" afterPath="$PROJECT_DIR$/src/lib/todoHelpers.js" />
-    </list>
+    <list default="true" id="a18eb967-8bf7-4562-aa2c-5bcfd0f6c2ae" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -850,7 +839,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32683000" />
+    <option name="totallyTimeSpent" value="32845000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
