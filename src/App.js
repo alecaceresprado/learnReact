@@ -2,8 +2,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { TodoForm, TodoList, ErrorHandler } from './components/todo';
-import { addTodo, updateTodo, toggleTodo, checkForDuplicates } from './lib/todoHelpers';
+import { TodoForm, TodoList, ErrorHandler, ConfirmDeleteModal } from './components/todo';
+import { addTodo, updateTodo, toggleTodo, checkForDuplicates, deleteTodo } from './lib/todoHelpers';
 
 class App extends React.Component {
   state = {
@@ -25,6 +25,8 @@ class App extends React.Component {
       },
     ],
     errors: [],
+    modalOpen: false,
+    todoForModal: {},
   };
 
   handleCheck = (todoElement) => {
@@ -33,9 +35,28 @@ class App extends React.Component {
     this.setState({ TODO: updatedTodoList });
   }
 
+  handleDelete = (todoElement) => {
+    const updatedTodoList = deleteTodo(this.state.TODO, todoElement);
+    this.setState({ TODO: updatedTodoList });
+  }
+
+  openModal = (todoElement) => {
+    this.setState({ modalOpen: true, todoForModal: todoElement });
+  }
+
+  closeModal = () => {
+    this.setState({ modalOpen: false, todoForModal: {} });
+  }
+
+  handleModalAccept = (todoElement) => {
+    this.handleDelete(todoElement);
+    this.closeModal();
+  }
+
   handleSubmit = (evt) => {
+    const newId = this.state.TODO.length > 0 ? this.state.TODO[this.state.TODO.length - 1].id + 1 : -1;
     const newTodo = {
-      id: this.state.TODO[this.state.TODO.length - 1].id + 1,
+      id: newId,
       name: evt.target.children[0].value,
       isComplete: false,
     };
@@ -55,6 +76,14 @@ class App extends React.Component {
           <h2>Welcome to React</h2>
         </div>
         <div className="Todo-App">
+          {
+            this.state.modalOpen &&
+            <ConfirmDeleteModal
+              cancelAction={this.closeModal}
+              acceptAction={this.handleModalAccept}
+              todoElement={this.state.todoForModal}
+            />
+          }
           <h2>React List</h2>
           {
             this.state.errors.length > 0 && <ErrorHandler errors={ this.state.errors } />
@@ -65,7 +94,12 @@ class App extends React.Component {
             handleValidationError={this.handleValidationError}
             validations={[checkForDuplicates]}
           />
-          <TodoList list={this.state.TODO} handleCheck={this.handleCheck} />
+          <TodoList
+            list={this.state.TODO}
+            handleCheck={this.handleCheck}
+            handleDelete={this.handleDelete}
+            openModal={this.openModal}
+          />
         </div>
       </div>
     );

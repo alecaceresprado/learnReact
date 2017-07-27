@@ -39,6 +39,28 @@ ul {
 
 li {
   list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.TodoApp__FormInput {
+  width: 250px;
+  height: 25px;
+}
+
+.TodoItem__DeleteICon {
+  width: 25px;
+  left: 15px;
+  top: -17px;
+}
+
+.TodoItem__CheckInput {
+  width: 25px;
+}
+
+.TodoItem__NameSpan {
+  width: 200px;
 }
 
 .error {

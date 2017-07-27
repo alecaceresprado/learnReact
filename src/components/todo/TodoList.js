@@ -5,7 +5,13 @@ const TodoList = props => (
     <div className="Todo-List">
       <ul>
         {props.list.map(listElement => (
-          <TodoItem key={listElement.id} element={listElement} handleCheck={props.handleCheck} />
+          <TodoItem
+            key={listElement.id}
+            element={listElement}
+            handleCheck={props.handleCheck}
+            handleDelete={props.handleDelete}
+            openModal={props.openModal}
+          />
         ))}
       </ul>
     </div>

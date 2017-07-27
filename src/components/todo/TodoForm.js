@@ -43,6 +43,7 @@ class TodoForm extends React.Component {
           type="text"
           value={this.state.currentTodo}
           onChange={this.handleInput}
+          className="TodoApp__FormInput"
         />
       </form>
     );

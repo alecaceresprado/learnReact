@@ -11,3 +11,6 @@ export const updateTodo = (list, element) => {
 
 export const checkForDuplicates = (list, elementToAdd) =>
   list.findIndex(listElement => listElement.name === elementToAdd) === -1 ? '' : 'Duplicated entry';
+
+export const deleteTodo = (list, elementToDelete) =>
+  list.filter(listElement => listElement.id !== elementToDelete.id);
